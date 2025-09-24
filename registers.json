@@ -1,0 +1,70 @@
+{
+  "slave_id": 1,
+  "endianness": "big",
+  "probe": { "name": "CH1_Frequency_0p01Hz", "address": 1, "type": "uint32", "function": 3, "scale": 0.01 },
+  "registers": [
+    { "name": "CH1_Frequency_0p01Hz", "address": 1,  "type": "uint32", "function": 3, "scale": 0.01, "unit": "Hz" },
+    { "name": "CH1_Index",             "address": 3,  "type": "uint16", "function": 3 },
+    { "name": "CH1_Window_ms",         "address": 4,  "type": "uint16", "function": 3, "rw": true, "min": 100, "max": 2000 },
+    { "name": "CH1_CrystalStatus",     "address": 5,  "type": "enum16", "function": 3, "map": { "0": "Fail", "1": "OK" } },
+    { "name": "CH1_OscillatorSelect",  "address": 6,  "type": "enum16", "function": 3, "map": { "0": "internal", "1": "external" } },
+    { "name": "CH1_FIFO_FilterSize",   "address": 7,  "type": "uint16", "function": 3, "rw": true, "min": 0, "max": 64 },
+    { "name": "CH1_AlphaFiltering_ON", "address": 8,  "type": "bool16", "function": 3, "rw": true },
+    { "name": "CH1_AlphaValue_x100",   "address": 9,  "type": "uint16", "function": 3, "rw": true, "scale": 0.01 },
+    { "name": "CH1_Thickness_A",       "address": 10, "type": "uint32", "function": 3, "scale": 0.01, "unit": "Å" },
+    { "name": "CH1_Rate_A_per_s",      "address": 12, "type": "int32",  "function": 3, "scale": 0.01, "unit": "Å/s" },
+    { "name": "CH1_Density",           "address": 14, "type": "uint16", "function": 3, "rw": true, "scale": 0.01 },
+    { "name": "CH1_ZFactor",           "address": 15, "type": "uint16", "function": 3, "rw": true, "scale": 0.001 },
+
+    { "name": "CH2_Frequency_0p01Hz",  "address": 17, "type": "uint32", "function": 3, "scale": 0.01, "unit": "Hz" },
+    { "name": "CH2_Index",             "address": 19, "type": "uint16", "function": 3 },
+    { "name": "CH2_Window_ms",         "address": 20, "type": "uint16", "function": 3, "rw": true, "min": 100, "max": 2000 },
+    { "name": "CH2_CrystalStatus",     "address": 21, "type": "enum16", "function": 3, "map": { "0": "Fail", "1": "OK" } },
+    { "name": "CH2_OscillatorSelect",  "address": 22, "type": "enum16", "function": 3, "map": { "0": "internal", "1": "external" } },
+    { "name": "CH2_FIFO_FilterSize",   "address": 23, "type": "uint16", "function": 3, "rw": true, "min": 0, "max": 64 },
+    { "name": "CH2_AlphaFiltering_ON", "address": 24, "type": "bool16", "function": 3, "rw": true },
+    { "name": "CH2_AlphaValue_x100",   "address": 25, "type": "uint16", "function": 3, "rw": true, "scale": 0.01 },
+    { "name": "CH2_Thickness_A",       "address": 26, "type": "uint32", "function": 3, "scale": 0.01, "unit": "Å" },
+    { "name": "CH2_Rate_A_per_s",      "address": 28, "type": "int32",  "function": 3, "scale": 0.01, "unit": "Å/s" },
+    { "name": "CH2_Density",           "address": 30, "type": "uint16", "function": 3, "rw": true, "scale": 0.01 },
+    { "name": "CH2_ZFactor",           "address": 31, "type": "uint16", "function": 3, "rw": true, "scale": 0.001 },
+
+    { "name": "DeviceID",              "address": 32, "type": "uint16", "function": 3 },
+    { "name": "DeviceAddress_RS485",   "address": 33, "type": "uint16", "function": 3, "rw": true },
+    { "name": "BaudCode",              "address": 34, "type": "enum16", "function": 3, "rw": true,
+      "map": { "0": 2400, "1": 4800, "2": 9600, "3": 19200, "4": 38400, "5": 57600, "6": 115200 } },
+    { "name": "ResetDevice",           "address": 35, "type": "command16", "function": 6 },
+
+    { "name": "SerialNumber_ASCII",    "address": 36, "type": "ascii",  "words": 4,  "function": 3 },
+    { "name": "ProductNumber_ASCII",   "address": 40, "type": "ascii",  "words": 4,  "function": 3 },
+    { "name": "GitHash_ASCII_plus_TAG","address": 44, "type": "ascii",  "words": 10, "function": 3 },
+
+    { "name": "IP_Address",            "address": 49, "type": "ip32",   "function": 3, "rw": true },
+    { "name": "Netmask",               "address": 51, "type": "ip32",   "function": 3, "rw": true },
+    { "name": "Gateway",               "address": 53, "type": "ip32",   "function": 3, "rw": true },
+
+    { "name": "MAC_Address",           "address": 55, "type": "mac48",  "function": 3 },
+
+    { "name": "DHCP_On",               "address": 58, "type": "bool16", "function": 3, "rw": true },
+    { "name": "TCP_Port",              "address": 59, "type": "uint16", "function": 3, "rw": true, "min": 1024, "max": 49151 },
+
+    { "name": "BL_IP_Address",         "address": 60, "type": "ip32",   "function": 3, "rw": true },
+    { "name": "BL_Netmask",            "address": 62, "type": "ip32",   "function": 3, "rw": true },
+    { "name": "BL_Gateway",            "address": 64, "type": "ip32",   "function": 3, "rw": true },
+    { "name": "BL_ConfigSelect",       "address": 66, "type": "enum16", "function": 3, "rw": true,
+      "map": { "0": "factory", "1": "from_0x3C_0x41" } },
+
+    { "name": "NetParams_SaveToNVM",   "address": 67, "type": "command16", "function": 6, "rw": true },
+
+    { "name": "CrystalZero",           "address": 81, "type": "bitmask16", "function": 6, "rw": true,
+      "map": { "1": "CH1", "2": "CH2", "3": "CH1+CH2" } },
+
+    { "name": "CH1_ToolingFactor_x1000","address": 82, "type": "uint16", "function": 3, "rw": true, "scale": 0.001 },
+    { "name": "CH1_MinFreq_Hz",        "address": 83, "type": "uint32", "function": 3, "rw": true, "scale": 0.01 },
+    { "name": "CH1_MaxFreq_Hz",        "address": 85, "type": "uint32", "function": 3, "rw": true, "scale": 0.01 },
+
+    { "name": "CH2_ToolingFactor_x1000","address": 87, "type": "uint16", "function": 3, "rw": true, "scale": 0.001 },
+    { "name": "CH2_MinFreq_Hz",        "address": 88, "type": "uint32", "function": 3, "rw": true, "scale": 0.01 },
+    { "name": "CH2_MaxFreq_Hz",        "address": 90, "type": "uint32", "function": 3, "rw": true, "scale": 0.01 }
+  ]
+}
